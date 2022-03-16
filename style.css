@@ -1,0 +1,134 @@
+@import url('http://fonts.cdnfonts.com/css/robert-sans');
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Robert Sans', sans-serif;                                         
+}
+.wrapper{
+    display: flex;
+}
+.left-side{
+    position: relative;
+    width: 60%;
+    background-color: orange;
+    max-height: 100vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.left-side .event-wrapper{
+    display: flex;
+    background-color: #fff;
+    height: 100px;
+    margin: 0 auto;
+    width: 60%;
+    margin-top: 10px;
+}
+.event-wrapper, .event-wrapper *{
+    border-radius: 3px;
+}
+.left-side  .time{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: blue;
+    text-align: center;
+    flex: 1;
+    color: white;
+    font-size:30px;
+}
+.left-side  .event-name{
+    flex: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    background-color: white;
+    font-size: 30px;
+    /* max-width: 410px; */
+    overflow-x: scroll;
+}
+
+.trash{
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    width: 7.1rem;
+    text-align: center;
+}
+
+.trash i{
+    font-size: 7rem;
+    color:#000;
+}
+
+
+.clear-local {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    width: 7.1rem;
+    text-align: center;
+}
+
+.clear-local i{
+    font-size: 7rem;
+}
+
+.condition{
+    background-color: red;
+}
+
+.right-side * {
+    border-radius: 3px;
+}
+.right-side{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blue;
+    width: 40%;
+    padding: 30px 0;
+    height: 100vh;
+}
+h2{
+    text-align: center;
+}
+.form-holder{
+    background-color: rgb(78, 78, 241);
+    color: #fff;
+    width: 80%;
+    height: 65%;
+    padding: 30px 5px;
+    
+}
+.input-title{
+    display: flex;
+    flex-direction: column;
+}
+form> label{
+margin: 3px 0;
+}
+.input-title>input, .input-title>textarea{
+    margin-bottom: 10px;
+}
+.input-date{
+    display: flex;
+    flex-direction: column;
+}
+.date-inputs-holder>input{
+    margin: 7px;
+}
+.date-inputs-holder{
+    margin: 0 auto;
+}
+button{
+    width: 100%;
+    padding: 5px 0;
+    background-color: rgb(154, 154, 190);
+    color: white;
+    margin:20px 0;
+    border: 1px solid rgb(154, 154, 190);
+}
+button:active{
+    border: 1px solid black;
+}
