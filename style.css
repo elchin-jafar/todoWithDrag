@@ -8,7 +8,7 @@
     display: flex;
 }
 .left-side{
-    position: relative;
+    /* position: relative; */
     width: 60%;
     background-color: orange;
     max-height: 100vh;
@@ -49,8 +49,9 @@
 }
 
 .trash{
-    position: absolute;
-    bottom: 0;
+    display: inline-block;
+    position: sticky;
+    top: 100%;
     left: 1rem;
     width: 7.1rem;
     text-align: center;
@@ -63,11 +64,13 @@
 
 
 .clear-local {
-    position: absolute;
-    bottom: 0;
-    right: 1rem;
+    display: inline-block;
+    position: sticky;
+    top: 100%;
+    left: 100%;
     width: 7.1rem;
     text-align: center;
+    cursor: pointer;
 }
 
 .clear-local i{
@@ -131,4 +134,22 @@ button{
 }
 button:active{
     border: 1px solid black;
+}
+
+/* COUNTDOWN */
+
+section {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    width: 80%;
+    height: 80%;
+    background-color: black;
+    color: wheat;
+}
+
+.countdown {
+    display: initial;
 }
