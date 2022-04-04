@@ -7,15 +7,27 @@
 .wrapper{
     display: flex;
 }
-.left-side{
+.right-side{
     /* position: relative; */
+    /* max-height: 100vh; */
     width: 60%;
     background-color: orange;
     max-height: 100vh;
-    overflow: scroll;
-    overflow-x: hidden;
+
 }
-.left-side .event-wrapper{
+
+.separate-event-from-trash {
+    height: 55%;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.scroll-y {
+    overflow-y: scroll;
+}
+
+.right-side .event-wrapper{
     display: flex;
     background-color: #fff;
     height: 100px;
@@ -26,7 +38,7 @@
 .event-wrapper, .event-wrapper *{
     border-radius: 3px;
 }
-.left-side  .time{
+.right-side  .time{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,7 +48,7 @@
     color: white;
     font-size:30px;
 }
-.left-side  .event-name{
+.right-side  .event-name{
     flex: 3;
     display: flex;
     justify-content: center;
@@ -81,10 +93,10 @@
     background-color: red;
 }
 
-.right-side * {
+.left-side * {
     border-radius: 3px;
 }
-.right-side{
+.left-side{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -108,7 +120,7 @@ h2{
     display: flex;
     flex-direction: column;
 }
-form> label{
+form > label{
 margin: 3px 0;
 }
 .input-title>input, .input-title>textarea{
@@ -152,4 +164,25 @@ section {
 
 .countdown {
     display: initial;
+}
+
+.timer{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5rem;
+}
+
+.x-button {
+    display: inline-block;
+    border: 1px solid wheat;
+    border-radius: 50%;
+    padding: 3px 15px;
+    font-size: 2rem;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
 }
