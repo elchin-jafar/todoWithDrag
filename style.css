@@ -13,6 +13,7 @@
     width: 60%;
     background-color: orange;
     max-height: 100vh;
+    border-left: 1px solid rgb(95, 93, 93);
 
 }
 
@@ -25,6 +26,11 @@
 
 .scroll-y {
     overflow-y: scroll;
+}
+
+.right-side > h1 {
+    font-size: 3rem;
+    text-align: center;
 }
 
 .right-side .event-wrapper{
@@ -153,17 +159,31 @@ button:active{
 section {
     position: absolute;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    display: none;
+    top: 0;
+    transform: translate(-50%,-100%);
     width: 80%;
     height: 80%;
     background-color: black;
     color: wheat;
+    padding: 2rem 0;
+    transition-property: top,transform;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(.93,.65,.65,1.32);
 }
 
 .countdown {
-    display: initial;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timer-title {
+    font-size: 5rem;
+    text-align: center;
+}
+
+.timer-description {
+    font-size: 2rem;
+    text-align: center;
 }
 
 .timer{

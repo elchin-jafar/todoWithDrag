@@ -12,7 +12,8 @@ const localVanisher = document.querySelector(".clear-local");
 const countdownSection = document.querySelector("section");
 const sectionTimer = document.querySelector(".timer");
 const xBtn = document.querySelector(".x-button");
-const timerTitle = document.querySelector(".timer-title")
+const timerTitle = document.querySelector(".timer-title");
+const timerDes = document.querySelector(".timer-description");
 
 
 let months = [
@@ -130,7 +131,9 @@ function renderEvents() {
 
     eventWrapper.addEventListener("click", () => {
       countdownSection.classList.add("countdown");
-        timerTitle.textContent = event.title;
+      
+        timerTitle.textContent = event.title.toUpperCase();
+        timerDes.textContent = event.description;
 
         const x = setInterval(
         
@@ -165,7 +168,9 @@ function renderEvents() {
 
         xBtn.addEventListener("click", () => {
           clearInterval(x);
-          sectionTimer.textContent = "Loading...";
+          setTimeout(() => {
+            sectionTimer.innerHTML = `<img src="./asset/Eclipse-1s-200px.svg" alt="loading" />`;
+          }, 500);
           countdownSection.classList.remove("countdown");
         });
       

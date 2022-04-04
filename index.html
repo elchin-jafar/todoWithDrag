@@ -1,45 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script src="https://kit.fontawesome.com/d0ecf97684.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <script
+      src="https://kit.fontawesome.com/d0ecf97684.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="wrapper">
-     
-        <div class="left-side">
-            <div class="form-holder">
-                <h2>Create new event</h2>
-                <form action="">
-                    <div class="input-title">
-                        <label for="input-title">Title</label>
-                        <input id="input-title" type="text" placeholder="Title"> 
-                        <label for="input-des">Description</label> 
-                        <textarea name="" id="input-des" cols="30" rows="10" placeholder="Description"></textarea>
-                    </div>
-                    <div class="input-date">
-                        <label for="">Choose date for event</label> 
-                        <div class="date-inputs-holder">
-
-                            <input  id = 'input-date' type="date">
-                            <input  id = 'input-time' type="time">
-                        </div>
-                    </div>  
-                    <button>Add Event</button>
-                </form>
+      <div class="left-side">
+        <div class="form-holder">
+          <h2>Create new event</h2>
+          <form action="">
+            <div class="input-title">
+              <label for="input-title">Title</label>
+              <input id="input-title" type="text" placeholder="Title" />
+              <label for="input-des">Description</label>
+              <textarea
+                name=""
+                id="input-des"
+                cols="30"
+                rows="10"
+                placeholder="Description"
+              ></textarea>
             </div>
+            <div class="input-date">
+              <label for="">Choose date for event</label>
+              <div class="date-inputs-holder">
+                <input id="input-date" type="date" />
+                <input id="input-time" type="time" />
+              </div>
+            </div>
+            <button>Add Event</button>
+          </form>
         </div>
-    
+      </div>
 
-
-    <div class="right-side">
+      <div class="right-side">
         <h1>Events</h1>
         <div class="separate-event-from-trash">
-            <!-- <div class="event-wrapper">
+          <!-- <div class="event-wrapper">
                 <div class="time">
                     <div class="time-day">12</div>
                     <div class="time-momth">November</div>
@@ -50,30 +55,39 @@
         </div>
 
         <div class="trash">
-            <i class="fas fa-trash"></i>
-            <p>To Delete Event drop the event here plz</p>
+          <i class="fas fa-trash"></i>
+          <p>To Delete Event drop the event here plz</p>
         </div>
 
         <div class="clear-local">
-            <i class="fas fa-trash-alt"></i>
-            <p>To Clear LocalStorage Click here plz</p>
+          <i class="fas fa-trash-alt"></i>
+          <p>To Clear LocalStorage Click here plz</p>
         </div>
-
+      </div>
     </div>
 
-</div>
-
     <section>
-        <div class="timer-title"></div>
-        <div class="timer">Loading..</div>
-        <div class="x-button">X</div>
+      <div class="timer-title">this is title</div>
+      <div class="timer-description">this is des</div>
+      <div class="timer">
+        <img
+          src="./asset/Eclipse-1s-200px.svg"
+          alt="loading"
+        />
+      </div>
+      <div class="x-button">X</div>
     </section>
-
 
     <footer></footer>
 
-    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
