@@ -6,22 +6,20 @@
 }
 .wrapper{
     display: flex;
+    background: linear-gradient(to right, #673ab7, #512da8);
 }
 .right-side{
-    /* position: relative; */
-    /* max-height: 100vh; */
     width: 60%;
-    background-color: orange;
     max-height: 100vh;
-    border-left: 1px solid rgb(95, 93, 93);
-
+    border-left: 1px solid rgb(221, 211, 211);
+    position: relative;
 }
 
 .separate-event-from-trash {
     height: 55%;
     width: 90%;
-    margin: 0 auto;
-    border: 1px solid black;
+    margin: 136px 0;
+    border: 1px solid linear-gradient(to right, #005c97, #363795);
 }
 
 .scroll-y {
@@ -31,6 +29,8 @@
 .right-side > h1 {
     font-size: 3rem;
     text-align: center;
+    color: white;
+    margin-top: 2rem;
 }
 
 .right-side .event-wrapper{
@@ -41,6 +41,11 @@
     width: 60%;
     margin-top: 10px;
 }
+
+.separate-event-from-trash {
+    position: relative;
+    z-index: 2;
+}
 .event-wrapper, .event-wrapper *{
     border-radius: 3px;
 }
@@ -48,7 +53,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: blue;
+    /* background: linear-gradient(to right, #005c97, #363795); */
+    background: linear-gradient(to right, #a044ff, #6a3093);
     text-align: center;
     flex: 1;
     color: white;
@@ -62,28 +68,29 @@
     flex-wrap: nowrap;
     background-color: white;
     font-size: 30px;
-    /* max-width: 410px; */
+    border: 1px solid wheat;
     overflow-x: scroll;
 }
 
 .trash{
-    display: inline-block;
-    position: sticky;
-    top: 100%;
-    left: 1rem;
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    right: 1rem;
     width: 7.1rem;
     text-align: center;
 }
 
 .trash i{
-    font-size: 7rem;
-    color:#000;
+    font-size: 6rem;
+    color: rgb(184, 238, 184);
 }
 
 
 .clear-local {
     display: inline-block;
     position: sticky;
+    z-index: 2;
     top: 100%;
     left: 100%;
     width: 7.1rem;
@@ -106,16 +113,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: blue;
+    /* background: linear-gradient(to right, #b24592, #f15f79); */
     width: 40%;
     padding: 30px 0;
     height: 100vh;
 }
 h2{
+    color: white;
     text-align: center;
 }
 .form-holder{
-    background-color: rgb(78, 78, 241);
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(to right, #9d50bb, #6e48aa);
+    
     color: #fff;
     width: 80%;
     height: 65%;
@@ -126,11 +137,21 @@ h2{
     display: flex;
     flex-direction: column;
 }
-form > label{
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label{
 margin: 3px 0;
+color: black;
+text-align: center;
 }
 .input-title>input, .input-title>textarea{
     margin-bottom: 10px;
+    border: 1px solid black;
+    padding: 5px;
 }
 .input-date{
     display: flex;
@@ -143,37 +164,63 @@ margin: 3px 0;
     margin: 0 auto;
 }
 button{
-    width: 100%;
-    padding: 5px 0;
-    background-color: rgb(154, 154, 190);
+    margin: 30px auto;
+    /* align-self: center; */
+    width: 30%;
+    padding: 5px;
+    /* #6a3093 */
+    background-color: blueviolet;
     color: white;
-    margin:20px 0;
     border: 1px solid rgb(154, 154, 190);
+    /* background-color: wheat; */
+    
 }
+
+button:hover{
+    border: 1px solid rgb(133, 133, 170);
+}
+
 button:active{
-    border: 1px solid black;
+    background-color: rgb(0, 0, 0);
 }
 
 /* COUNTDOWN */
 
+.blurred {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    transition-property:backdrop-filter;
+    transition-duration: 200ms;
+    /* background-color: red; */
+}
+
+.blur-on {
+    backdrop-filter: blur(5px);
+}
+
 section {
     position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translate(-50%,-100%);
     width: 80%;
     height: 80%;
-    background-color: black;
-    color: wheat;
+    transform: translateY(-130%);
+    background: linear-gradient(to right, #a044ff, #6a3093); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    color: white;
     padding: 2rem 0;
+    border-radius: 8px;
     transition-property: top,transform;
     transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(.93,.65,.65,1.32);
+    transition-timing-function: cubic-bezier(.17,.67,.04,1.31);
 }
 
 .countdown {
-    top: 50%;
-    transform: translate(-50%, -50%);
+    transform: initial;
 }
 
 .timer-title {

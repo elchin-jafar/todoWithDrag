@@ -4,16 +4,18 @@ const time = document.querySelector("#input-time");
 const description = document.querySelector("#input-des");
 const button = document.querySelector("button");
 const containerForEvents = document.querySelector(".separate-event-from-trash");
+const formHolder = document.querySelector(".form-holder");
 const rightSide = document.querySelector(".right-side");
 const trash = document.querySelector(".trash");
 const trashIcon = document.querySelector(".trash>i");
 const header = document.querySelector("h2");
-const localVanisher = document.querySelector(".clear-local");
+// const localVanisher = document.querySelector(".clear-local");
 const countdownSection = document.querySelector("section");
 const sectionTimer = document.querySelector(".timer");
 const xBtn = document.querySelector(".x-button");
 const timerTitle = document.querySelector(".timer-title");
 const timerDes = document.querySelector(".timer-description");
+const blurred = document.querySelector(".blurred")
 
 
 let months = [
@@ -81,11 +83,11 @@ button.addEventListener("click", (e) => {
   }
 });
 
-localVanisher.addEventListener("click", () => {
-  localStorage.clear();
-  events = [];
-  renderEvents();
-});
+// localVanisher.addEventListener("click", () => {
+//   localStorage.clear();
+//   events = [];
+//   renderEvents();
+// });
 
 function renderEvents() {
   containerForEvents.innerHTML = "";
@@ -131,6 +133,11 @@ function renderEvents() {
 
     eventWrapper.addEventListener("click", () => {
       countdownSection.classList.add("countdown");
+      blurred.classList.add("blur-on");
+      containerForEvents.style.zIndex = 1;
+      formHolder.style.zIndex = 1;
+      trash.style.zIndex = 1;
+      // localVanisher.style.zIndex = 1;
       
         timerTitle.textContent = event.title.toUpperCase();
         timerDes.textContent = event.description;
@@ -146,7 +153,7 @@ function renderEvents() {
 
           console.log(distance);
           if(distance > 0) {
-            // sectionTimer.textContent = "";
+            
             
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor(
@@ -160,19 +167,27 @@ function renderEvents() {
                 days + "d " + hours + "h " + minutes + "m " + seconds + "s ";  
             
           } else {
-            // sectionTimer.textContent = "";
+            
             sectionTimer.textContent = "EXPIRED";
           }
         }
         , 1000);
 
         xBtn.addEventListener("click", () => {
-          clearInterval(x);
-          setTimeout(() => {
-            sectionTimer.innerHTML = `<img src="./asset/Eclipse-1s-200px.svg" alt="loading" />`;
-          }, 500);
-          countdownSection.classList.remove("countdown");
-        });
+            clearInterval(x);
+            containerForEvents.style.zIndex = 2;
+            formHolder.style.zIndex = 2;
+            trash.style.zIndex = 2;
+            // localVanisher.style.zIndex = 2;
+            blurred.classList.remove("blur-on")
+            setTimeout(() => {
+              sectionTimer.innerHTML = `<img src="./asset/Eclipse-1s-200px.svg" alt="loading" />`;
+            }, 500);
+            countdownSection.classList.remove("countdown");
+            
+          })
+          
+        ;
       
       
     });
@@ -195,5 +210,3 @@ trash.addEventListener("drop", (event) => {
   localStorage.setItem("dataEvent", JSON.stringify(events));
   renderEvents();
 });
-
-
