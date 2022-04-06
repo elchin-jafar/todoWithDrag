@@ -35,11 +35,13 @@
 
 .right-side .event-wrapper{
     display: flex;
-    background-color: #fff;
-    height: 100px;
+
+    height: 115px;
     margin: 0 auto;
     width: 60%;
     margin-top: 10px;
+    cursor: pointer;
+    
 }
 
 .separate-event-from-trash {
