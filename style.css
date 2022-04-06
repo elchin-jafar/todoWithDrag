@@ -83,7 +83,7 @@
 
 .trash i{
     font-size: 6rem;
-    color: rgb(184, 238, 184);
+    color: rgb(196, 219, 196);
 }
 
 
@@ -103,7 +103,7 @@
 }
 
 .condition{
-    background-color: red;
+    background-color: rgb(216, 20, 151);
 }
 
 .left-side * {
@@ -181,7 +181,7 @@ button:hover{
 }
 
 button:active{
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(158, 127, 207);
 }
 
 /* COUNTDOWN */
@@ -243,13 +243,18 @@ section {
 
 .x-button {
     display: inline-block;
-    border: 1px solid wheat;
-    border-radius: 50%;
-    padding: 3px 15px;
+    /* border: 1px solid wheat; */
+    /* border-radius: 50%; */
     font-size: 2rem;
     cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
-    margin: 5px;
+    margin: 10px;
+    transition-property: border, color;
+    transition-duration: 300ms;
+}
+
+.x-button:hover {
+    color: rgb(224, 111, 206);
 }

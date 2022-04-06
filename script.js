@@ -52,7 +52,7 @@ window.addEventListener("load", () => {
 
 function validation() {
   if (!(title.value && description.value && date.value && time.value)) {
-    header.textContent = "Fill the all entries";
+    header.textContent = "Fill the all sections please !!";
     header.classList.add("condition");
     return false;
   } else {
